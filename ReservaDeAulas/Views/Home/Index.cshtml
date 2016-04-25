@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Reserva de Aulas</h1>
+    <p class="lead">Bienvenidos al sistema de Reservas de Aulas de UPB.</p>
+    @using Microsoft.AspNet.Identity
+    @if (Request.IsAuthenticated == false)
+    {
+        <p><a href="/Disponibles" class="btn btn-primary btn-lg">Reserva &raquo;</a></p>
+    }
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Recuerde</h2>
+        <p>
+            En caso de presentarse algún inconveniente en el ingreso al sistema por favor comuníquese con la Secretaría General al teléfono: 3538100 Ext. 3513, para otra requerimiento diferente comuniquese con soporte al 3538100 ext 8000 soporte@upb.edu.co.
+        </p>
+        <p><a class="btn btn-default" href="#">más &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Respuesta a la reserva</h2>
+        <p>Una vez analizada su solicitud, se le notificará a su correo electrónico la reserva solicitada del aula, auditorio o equipo solicitado.</p>
+        <p><a class="btn btn-default" href="#">más &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Políticas de uso</h2>
+        <p>Responder económica o disciplinariamente, ante cualquier daño ocasionado al aula o al equipo tecnológico. Se tendrá en cuenta las políticas establecidas por la Dirección Administrativa y Financiera.</p>
+        <p><a class="btn btn-default" href="#">más &raquo;</a></p>
+    </div>
+</div>

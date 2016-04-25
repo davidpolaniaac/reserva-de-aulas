@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ReservaDeAulas.Models.Aula>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Aulas</h2>
+
+<p>
+   @Html.ActionLink("Crear nueva", "Create", null, new { @class = "btn btn-primary btn-large" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NumAula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bloque)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumAula)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bloque)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdAula }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdAula }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdAula })
+        </td>
+    </tr>
+}
+
+</table>

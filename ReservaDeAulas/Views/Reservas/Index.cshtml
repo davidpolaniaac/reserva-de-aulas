@@ -1,0 +1,60 @@
+﻿@model IEnumerable<ReservaDeAulas.Models.Reserva>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Reservas</h2>
+
+<table class="table">
+    <tr> 
+        <th>
+            @Html.DisplayNameFor(model => model.IdReserva)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Disponible.Aula.NumAula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Disponible.Aula.Bloque)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Disponible.Aula.Descripcion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdReserva)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Disponible.Aula.NumAula)
+        </td> 
+        <td>
+            @Html.DisplayFor(modelItem => item.Disponible.Aula.Bloque)
+        </td> 
+        <td>
+            @Html.DisplayFor(modelItem => item.Disponible.Aula.Descripcion)
+        </td>       
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdReserva }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdReserva }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdReserva })
+        </td>
+    </tr>
+}
+
+</table>
